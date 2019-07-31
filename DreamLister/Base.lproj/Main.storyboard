@@ -26,8 +26,11 @@
                                     <segment title="Title"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="segmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="2yj-ZN-v04"/>
+                                </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvc-RY-BlX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvc-RY-BlX">
                                 <rect key="frame" x="0.0" y="132" width="375" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -138,12 +141,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
+            <point key="canvasLocation" x="828" y="665"/>
         </scene>
         <!--Add / Edit-->
         <scene sceneID="HzM-Ei-lGa">
             <objects>
-                <viewController id="uVd-0I-eBX" sceneMemberID="viewController">
+                <viewController id="uVd-0I-eBX" customClass="ItemDetailsVC" customModule="DreamLister" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4i-aQ-7I9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +164,9 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="N7e-U3-0CP"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="UnM-3o-31u"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="uVd-0I-eBX" eventType="touchUpInside" id="CW2-K8-pqM"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JOW-Fo-bJN" customClass="CustomTextField" customModule="DreamLister" customModuleProvider="target">
                                 <rect key="frame" x="124" y="84" width="235" height="40"/>
@@ -202,6 +208,9 @@
                                 <state key="normal" title="Save Item">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="uVd-0I-eBX" eventType="touchUpInside" id="Lg6-4q-fPc"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63p-Ox-OGV">
                                 <rect key="frame" x="16" y="395" width="343" height="216"/>
@@ -245,12 +254,22 @@
                     <navigationItem key="navigationItem" title="Add / Edit" id="fy5-1h-cre">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="rRb-cU-d4z">
                             <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="uVd-0I-eBX" id="TYd-NG-6eg"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailsField" destination="7eu-5Z-uzq" id="O8Q-q8-RQv"/>
+                        <outlet property="priceField" destination="icz-mz-Ryc" id="VFS-VH-GJL"/>
+                        <outlet property="storePicker" destination="63p-Ox-OGV" id="CcV-TO-f8t"/>
+                        <outlet property="thumgImg" destination="5Lj-Da-wJb" id="prJ-Ml-VWM"/>
+                        <outlet property="titleField" destination="JOW-Fo-bJN" id="QCo-ks-bIE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ocs-aD-EGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="303.59820089955025"/>
+            <point key="canvasLocation" x="1668" y="665"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FNh-vZ-QOf">
